@@ -1,0 +1,28 @@
+{
+    "name": "click2call/freepbx",
+    "description": "FreePBX Click2Call REST API",
+    "type": "project",
+    "license": "proprietary",
+    "require": {
+        "php": ">=7.4",
+        "firebase/php-jwt": "^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Click2Call\\": "src/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "config": {
+        "platform": {
+            "php": "7.4"
+        },
+        "policy": {
+            "advisories": {
+                "block": false
+            }
+        }
+    }
+}
