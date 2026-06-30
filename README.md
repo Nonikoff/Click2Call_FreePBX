@@ -79,31 +79,19 @@ Monitor real-time agent availability.
 
 ## ⌨️ CLI Management Tool
 
-Manage your integrations securely from the PBX shell using `/usr/local/bin/click2call-api`.
+Manage your integrations securely from the PBX shell using `manage_api_keys.php`.
 
-### Key Management (`--keys`)
 | Command | Description |
 | :--- | :--- |
-| `--keys --create-key` | Interactively create a new key and assign a routing CallerID. |
-| `--keys --list-keys` | Display all active keys, logins, and associated CallerIDs. |
-| `--keys --get-key` | Get details of a specific key. |
-| `--keys --update-caller-id` | Change the routing prefix/CallerID for an existing key. |
-| `--keys --reset-key` | Reset a key's secret or value. |
-| `--keys --enable-key` | Enable an API key. |
-| `--keys --disable-key` | Disable an API key. |
-| `--keys --delete-key` | Instantly revoke access for a specific integration. |
-
-### Presence Management (`--presence`)
-| Command | Description |
-| :--- | :--- |
-| `--presence --action {query,set}` | Query or set a device state. |
-| `--presence --device DEVICE` | Asterisk device name (e.g., PJSIP/101). |
-| `--presence --state STATE` | State to set (e.g., available, busy, offline). |
-| `--presence --message MESSAGE` | Optional description message for status. |
+| `--create-key` | Interactively create a new key and assign a routing CallerID. |
+| `--list-keys` | Display all active keys, logins, and associated CallerIDs. |
+| `--update-caller-id` | Change the routing prefix/CallerID for an existing key. |
+| `--delete-key` | Instantly revoke access for a specific integration. |
+| `--help` | Show all available management options. |
 
 **Example**:
 ```bash
-/usr/local/bin/click2call-api --keys --list-keys
+php /var/www/html/api/v1/manage_api_keys.php --list-keys
 ```
 
 ## 🛣️ Advanced Trunk Routing
@@ -121,7 +109,7 @@ You can force different CRM departments to use different trunks by assigning uni
 ### Scenario 2: Single Provider
 Simply leave the API Key CallerID empty or set it to your main outbound number. The call will follow your default FreePBX outbound rules.
 
-## 📊 Professional Logweging
+## 📊 Professional Logging
 
 Monitor your system in real-time using standard Linux tools:
 
