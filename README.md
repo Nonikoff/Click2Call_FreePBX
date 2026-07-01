@@ -2,13 +2,18 @@
   <img src="docs/Logo/Logo%20Badge.png" width="150" alt="Logo Badge">
 </p>
 
-# FreePBX Click2Call: The Universal API for Sangoma FreePBX
+# Click2Call API for FreePBX: Commercial Click-to-Call REST API compatible with FreePBX.
 
-Empower your CRM, web portal, or custom application with seamless Click2Call functionality. This enterprise-grade REST API is designed to originate calls on any version of Sangoma FreePBX, providing a robust bridge between your business software and your telephony infrastructure.
+Empower your CRM, web portal, or custom application with seamless Click2Call functionality. This enterprise-grade REST API is designed to originate calls on any version of FreePBX, providing a robust bridge between your business software and your telephony infrastructure.
 
 <p align="center">
   <img src="docs/Logo/Cover.png" alt="Cover" />
 </p>
+
+> **Disclaimer**
+>
+> Click2Call for FreePBX is an independent commercial product developed by Nonikoff.
+> It is **not affiliated with, endorsed by, or supported by Sangoma Technologies or the FreePBX project.**
 
 ## 🚀 Key Features
 
@@ -54,9 +59,21 @@ Unlike other solutions, Click2Call is designed for high-performance environments
 ### Click2Call
 Initiate a call between an agent and a destination.
 - **Endpoint**: `POST /api/v1/{api_key}/click2call`
+- **Parameters**: `agent` (required), `number` (required), `sync` (optional boolean, default `false`)
 - **Example**:
   ```bash
-  curl -X POST "https://your-pbx/api/v1/MY-SECURE-KEY/click2call?agent=101&number=5550123"
+  curl -X POST "https://your-pbx/api/v1/MY-SECURE-KEY/click2call?agent=101&number=5550123&sync=true"
+  ```
+- **Example Response**:
+  ```json
+  {
+    "call_id": "848a605f-7bc3-c3f2-1a4d-b9e123456789",
+    "caller_id": "101",
+    "extension": "101",
+    "destination": "5550123",
+    "sync": true,
+    "status": "Success"
+  }
   ```
 
 ### Agent Status
@@ -138,6 +155,9 @@ FreePBX Click2Call is a commercial product. Our system automatically secures you
 
 For other inquiries, trial requests, or custom support:
 👉 **neat.list5884@fastmail.com**
+
+FreePBX is a trademark of Sangoma Technologies.
+This project is an independent product and is not affiliated with or endorsed by Sangoma.
 
 ---
 *Developed for professionals who demand reliable FreePBX integrations.*
